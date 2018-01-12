@@ -19,9 +19,12 @@ import java.util.List;
 public class SpringKafkaTestController {
     @Autowired
     SpringKafkaTestService springKafkaTestService;
+
     @RequestMapping("/sendMessage")
-    public ResponseEntity sendMessage(String message) {
-        springKafkaTestService.sendMessage(message);
+    public ResponseEntity sendMessage(@RequestParam String message, @RequestParam(required = false) Integer repeatCount, @RequestParam(required = false) String topic) {
+        springKafkaTestService.sendMessage(message, repeatCount, topic);
         return ResponseEntity.ok().build();
     }
+
+
 }

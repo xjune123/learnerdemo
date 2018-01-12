@@ -13,7 +13,18 @@ public interface SpringKafkaTestService {
 
     /**
      * 发送消息
+     *
      * @param message 发送消息内容
+     * @param repeatCount 重复次数
      */
-   void sendMessage(String message);
+    void sendMessage(String message, Integer repeatCount);
+    /**
+     * 发送消息
+     *
+     * @param message 发送消息内容
+     * @param repeatCount 重复次数
+     * @param topic topic
+     */
+    void sendMessage(String message, Integer repeatCount, String topic);
+
 }
