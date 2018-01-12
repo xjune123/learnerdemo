@@ -34,6 +34,11 @@ public class TestCommitSyncConsumer {
                 consumer.commitSync();
                 buffer.clear();
             }
+            try {
+                Thread.sleep(200000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
